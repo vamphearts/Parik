@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Вход в систему</title>
+    <link rel="stylesheet" th:href="@{/css/auth.css}">
+</head>
+<body>
+    <div class="auth-container">
+        <div class="auth-box">
+            <h1>💇 Вход в систему</h1>
+            
+            <div th:if="${error}" class="error-message" th:text="${error}"></div>
+            <div th:if="${message}" class="success-message" th:text="${message}"></div>
+            <div th:if="${param.registered}" class="success-message">Регистрация успешна! Войдите в систему.</div>
+            
+            <form th:action="@{/process_login}" method="post">
+                <div class="form-group">
+                    <label for="username">Имя пользователя:</label>
+                    <input type="text" id="username" name="username" required autofocus>
+                </div>
+                
+                <div class="form-group">
+                    <label for="password">Пароль:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                
+                <button type="submit" class="btn btn-primary">Войти</button>
+            </form>
+            
+            <div class="auth-links">
+                <a th:href="@{/auth/registration}">Нет аккаунта? Зарегистрироваться</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+

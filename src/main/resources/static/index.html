@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Информационно-справочная система парикмахерской</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>💇 Информационно-справочная система парикмахерской</h1>
+            <nav class="tabs">
+                <button class="tab-btn active" data-tab="services">Услуги</button>
+                <button class="tab-btn" data-tab="masters">Мастера</button>
+                <button class="tab-btn" data-tab="appointments">Записи</button>
+                <button class="tab-btn" data-tab="users">Пользователи</button>
+                <button class="tab-btn" data-tab="reports">Отчёты</button>
+            </nav>
+        </header>
+
+        <main>
+            <!-- Вкладка Услуги -->
+            <div id="services" class="tab-content active">
+                <h2>📋 Список услуг</h2>
+                <div class="actions">
+                    <button class="btn btn-primary" onclick="showAddServiceForm()">+ Добавить услугу</button>
+                    <button class="btn btn-secondary" onclick="exportData('services', 'json')">📥 Экспорт JSON</button>
+                    <button class="btn btn-secondary" onclick="exportData('services', 'csv')">📥 Экспорт CSV</button>
+                </div>
+                <div id="services-list" class="cards-grid"></div>
+            </div>
+
+            <!-- Вкладка Мастера -->
+            <div id="masters" class="tab-content">
+                <h2>👨‍💼 Мастера</h2>
+                <div class="actions">
+                    <button class="btn btn-primary" onclick="showAddMasterForm()">+ Добавить мастера</button>
+                    <button class="btn btn-secondary" onclick="exportData('masters', 'json')">📥 Экспорт JSON</button>
+                </div>
+                <div id="masters-list" class="cards-grid"></div>
+            </div>
+
+            <!-- Вкладка Записи -->
+            <div id="appointments" class="tab-content">
+                <h2>📅 Записи клиентов</h2>
+                <div class="actions">
+                    <button class="btn btn-primary" onclick="showAddAppointmentForm()">+ Новая запись</button>
+                    <button class="btn btn-secondary" onclick="exportData('appointments', 'json')">📥 Экспорт JSON</button>
+                </div>
+                <div id="appointments-list" class="cards-grid"></div>
+            </div>
+
+            <!-- Вкладка Пользователи -->
+            <div id="users" class="tab-content">
+                <h2>👥 Пользователи</h2>
+                <div class="actions">
+                    <button class="btn btn-primary" onclick="showAddUserForm()">+ Добавить пользователя</button>
+                    <button class="btn btn-secondary" onclick="exportData('users', 'json')">📥 Экспорт JSON</button>
+                </div>
+                <div id="users-list" class="cards-grid"></div>
+            </div>
+
+            <!-- Вкладка Отчёты -->
+            <div id="reports" class="tab-content">
+                <h2>📊 Отчёты</h2>
+                <div class="actions">
+                    <button class="btn btn-primary" onclick="showGenerateReportForm()">📈 Сгенерировать отчёт</button>
+                    <button class="btn btn-secondary" onclick="exportData('reports', 'json')">📥 Экспорт JSON</button>
+                </div>
+                <div id="reports-list" class="cards-grid"></div>
+            </div>
+        </main>
+    </div>
+
+    <!-- Модальные окна для форм -->
+    <div id="modal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal()">&times;</span>
+            <div id="modal-body"></div>
+        </div>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
+
