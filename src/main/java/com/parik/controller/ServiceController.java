@@ -12,6 +12,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * REST контроллер для управления услугами салона.
+ * Предоставляет API endpoints для создания, получения, обновления и удаления услуг.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/api/services")
 @Tag(name = "Услуги", description = "API для управления услугами")

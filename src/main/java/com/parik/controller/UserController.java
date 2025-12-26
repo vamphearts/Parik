@@ -12,6 +12,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * REST контроллер для управления пользователями.
+ * Предоставляет API endpoints для создания, получения, обновления и удаления пользователей.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/api/users")
 @Tag(name = "Пользователи", description = "API для управления пользователями")

@@ -9,12 +9,27 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+/**
+ * Контроллер для обработки запросов аутентификации и регистрации.
+ * Управляет страницами входа и регистрации пользователей.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @Controller
 public class AuthController {
 
     @Autowired
     private UserService userService;
 
+    /**
+     * Отображает страницу входа в систему.
+     * 
+     * @param error параметр ошибки (если есть)
+     * @param logout параметр выхода (если есть)
+     * @param model модель для передачи данных в представление
+     * @return имя представления "auth/login"
+     */
     @GetMapping("/auth/login")
     public String loginPage(@RequestParam(required = false) String error, 
                            @RequestParam(required = false) String logout,
@@ -28,11 +43,28 @@ public class AuthController {
         return "auth/login";
     }
 
+    /**
+     * Отображает страницу регистрации нового пользователя.
+     * 
+     * @return имя представления "auth/registration"
+     */
     @GetMapping("/auth/registration")
     public String registrationPage() {
         return "auth/registration";
     }
 
+    /**
+     * Обрабатывает регистрацию нового пользователя.
+     * Создаёт нового пользователя с указанными данными.
+     * 
+     * @param username имя пользователя (логин)
+     * @param password пароль пользователя
+     * @param email электронная почта
+     * @param phone телефон (опционально)
+     * @param role роль пользователя (по умолчанию "Клиент")
+     * @param model модель для передачи данных в представление
+     * @return редирект на страницу входа при успехе или страницу регистрации при ошибке
+     */
     @PostMapping("/auth/register")
     public String register(@RequestParam String username,
                           @RequestParam String password,

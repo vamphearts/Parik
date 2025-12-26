@@ -13,6 +13,13 @@ import org.springframework.web.bind.annotation.*;
 import java.time.LocalDate;
 import java.util.List;
 
+/**
+ * REST контроллер для управления записями клиентов.
+ * Предоставляет API endpoints для создания, получения, обновления и удаления записей.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/api/appointments")
 @Tag(name = "Записи", description = "API для управления записями клиентов")

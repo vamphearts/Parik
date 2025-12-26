@@ -13,6 +13,13 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * REST контроллер для получения статистики системы.
+ * Предоставляет API endpoints для получения различных статистических данных.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/api/statistics")
 public class StatisticsController {

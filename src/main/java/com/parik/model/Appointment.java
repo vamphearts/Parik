@@ -5,6 +5,13 @@ import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.LocalTime;
 
+/**
+ * Модель записи на услугу.
+ * Представляет сущность записи клиента к мастеру на определенную услугу.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @Entity
 @Table(name = "appointments")
 public class Appointment {
@@ -36,9 +43,25 @@ public class Appointment {
     @Column(name = "updated_at")
     private LocalDateTime updatedAt;
 
+    /**
+     * Конструктор по умолчанию.
+     */
     public Appointment() {
     }
 
+    /**
+     * Конструктор с параметрами.
+     * 
+     * @param id уникальный идентификатор записи
+     * @param clientId идентификатор клиента
+     * @param masterId идентификатор мастера
+     * @param serviceId идентификатор услуги
+     * @param date дата записи
+     * @param time время записи
+     * @param status статус записи (Запланирована, Выполнена, Отменена)
+     * @param createdAt дата и время создания записи
+     * @param updatedAt дата и время последнего обновления
+     */
     public Appointment(Integer id, Integer clientId, Integer masterId, Integer serviceId, 
                        LocalDate date, LocalTime time, String status, 
                        LocalDateTime createdAt, LocalDateTime updatedAt) {
@@ -126,4 +149,3 @@ public class Appointment {
         this.updatedAt = updatedAt;
     }
 }
-

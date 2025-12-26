@@ -12,6 +12,13 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
+/**
+ * REST контроллер для управления мастерами салона.
+ * Предоставляет API endpoints для создания, получения, обновления и удаления мастеров.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/api/masters")
 @Tag(name = "Мастера", description = "API для управления мастерами")

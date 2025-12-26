@@ -5,6 +5,13 @@ import java.math.BigDecimal;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 
+/**
+ * Модель отчета о работе салона.
+ * Представляет сущность финансового отчета за определенную дату.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @Entity
 @Table(name = "reports")
 public class Report {
@@ -24,9 +31,21 @@ public class Report {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    /**
+     * Конструктор по умолчанию.
+     */
     public Report() {
     }
 
+    /**
+     * Конструктор с параметрами.
+     * 
+     * @param id уникальный идентификатор отчета
+     * @param reportDate дата отчета
+     * @param totalClients общее количество уникальных клиентов за дату
+     * @param totalIncome общий доход за дату
+     * @param createdAt дата и время создания отчета
+     */
     public Report(Integer id, LocalDate reportDate, Integer totalClients, 
                   BigDecimal totalIncome, LocalDateTime createdAt) {
         this.id = id;
@@ -77,4 +96,3 @@ public class Report {
         this.createdAt = createdAt;
     }
 }
-

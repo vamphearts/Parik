@@ -1,5 +1,12 @@
 package com.parik.dto;
 
+/**
+ * DTO (Data Transfer Object) для передачи данных пользователя.
+ * Используется для безопасной передачи данных пользователя без пароля в хешированном виде.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 public class UserDTO {
     private Integer id;
     private String username;

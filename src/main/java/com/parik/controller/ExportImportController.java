@@ -27,6 +27,14 @@ import java.io.StringWriter;
 import java.nio.charset.StandardCharsets;
 import java.util.List;
 
+/**
+ * REST контроллер для экспорта и импорта данных.
+ * Предоставляет API endpoints для экспорта и импорта данных в форматах JSON и CSV.
+ * Поддерживает экспорт/импорт пользователей, мастеров, услуг, записей и отчётов.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @RestController
 @RequestMapping("/api/export-import")
 @Tag(name = "Экспорт/Импорт", description = "API для экспорта и импорта данных в JSON и CSV форматах")

@@ -11,6 +11,14 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Сервис для работы с записями клиентов.
+ * Предоставляет методы для управления записями, включая создание,
+ * обновление, удаление, поиск и фильтрацию по различным критериям.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @Service
 public class JpaAppointmentService {
 

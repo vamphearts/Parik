@@ -4,6 +4,13 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Модель мастера салона.
+ * Представляет сущность мастера, предоставляющего услуги.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @Entity
 @Table(name = "masters")
 public class Master {
@@ -29,9 +36,23 @@ public class Master {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    /**
+     * Конструктор по умолчанию.
+     */
     public Master() {
     }
 
+    /**
+     * Конструктор с параметрами.
+     * 
+     * @param id уникальный идентификатор мастера
+     * @param name имя мастера
+     * @param specialization специализация мастера
+     * @param experience опыт работы в годах
+     * @param rating рейтинг мастера
+     * @param userId идентификатор пользователя, связанного с мастером
+     * @param createdAt дата и время создания записи
+     */
     public Master(Integer id, String name, String specialization, Integer experience, 
                   BigDecimal rating, Integer userId, LocalDateTime createdAt) {
         this.id = id;
@@ -101,4 +122,3 @@ public class Master {
         this.createdAt = createdAt;
     }
 }
-

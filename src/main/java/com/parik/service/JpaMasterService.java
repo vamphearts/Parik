@@ -10,6 +10,14 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Сервис для работы с мастерами салона.
+ * Предоставляет методы для управления мастерами, включая создание,
+ * обновление, удаление и поиск.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @Service
 public class JpaMasterService {
 

@@ -14,6 +14,13 @@ import java.util.List;
 import java.util.Map;
 import java.util.stream.Collectors;
 
+/**
+ * Основной контроллер для обработки веб-запросов.
+ * Отвечает за отображение главной страницы и страницы "Об авторе".
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @Controller
 public class MainController {
 
@@ -32,6 +39,18 @@ public class MainController {
     @Autowired
     private JpaReportService reportService;
 
+    /**
+     * Обрабатывает запрос на главную страницу приложения.
+     * Загружает данные об услугах, мастерах, пользователях, записях и отчётах.
+     * Поддерживает поиск, сортировку и фильтрацию по ролям пользователей.
+     * 
+     * @param model модель для передачи данных в представление
+     * @param search поисковый запрос (опционально)
+     * @param sortBy поле для сортировки (опционально)
+     * @param order порядок сортировки (asc/desc, по умолчанию asc)
+     * @param tab активная вкладка (services/masters/appointments/reports, по умолчанию services)
+     * @return имя представления "index"
+     */
     @GetMapping("/")
     public String index(Model model,
                        @RequestParam(required = false) String search,
@@ -103,6 +122,12 @@ public class MainController {
         return "index";
     }
 
+    /**
+     * Обрабатывает запрос на страницу "Об авторе".
+     * 
+     * @param model модель для передачи данных в представление
+     * @return имя представления "about"
+     */
     @GetMapping("/about")
     public String about(Model model) {
         Authentication auth = SecurityContextHolder.getContext().getAuthentication();

@@ -9,6 +9,14 @@ import java.time.LocalDateTime;
 import java.util.List;
 import java.util.Optional;
 
+/**
+ * Сервис для работы с услугами салона.
+ * Предоставляет методы для управления услугами, включая создание,
+ * обновление, удаление, поиск и сортировку.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @org.springframework.stereotype.Service
 public class JpaServiceService {
 

@@ -15,6 +15,13 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.security.web.SecurityFilterChain;
 import org.springframework.http.HttpMethod;
 
+/**
+ * Конфигурация безопасности Spring Security.
+ * Определяет правила доступа для различных ролей пользователей и настраивает аутентификацию.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @Configuration
 @EnableWebSecurity
 @EnableMethodSecurity

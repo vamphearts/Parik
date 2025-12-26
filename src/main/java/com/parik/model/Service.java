@@ -4,6 +4,13 @@ import jakarta.persistence.*;
 import java.math.BigDecimal;
 import java.time.LocalDateTime;
 
+/**
+ * Модель услуги салона.
+ * Представляет сущность услуги, предоставляемой салоном.
+ * 
+ * @author Курбанов Умар Рашидович
+ * @version 1.0
+ */
 @Entity
 @Table(name = "services")
 public class Service {
@@ -26,9 +33,22 @@ public class Service {
     @Column(name = "created_at")
     private LocalDateTime createdAt;
 
+    /**
+     * Конструктор по умолчанию.
+     */
     public Service() {
     }
 
+    /**
+     * Конструктор с параметрами.
+     * 
+     * @param id уникальный идентификатор услуги
+     * @param name название услуги
+     * @param description описание услуги
+     * @param price цена услуги
+     * @param duration длительность услуги в минутах
+     * @param createdAt дата и время создания записи
+     */
     public Service(Integer id, String name, String description, BigDecimal price, 
                    Integer duration, LocalDateTime createdAt) {
         this.id = id;
@@ -88,4 +108,3 @@ public class Service {
         this.createdAt = createdAt;
     }
 }
-
